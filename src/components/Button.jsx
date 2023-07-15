@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Button = ({ count, setCount }) => {
+const Button = ({count, handleIncreaseNumber, handleDecreaseNumber }) => {
   return (
     <div>
-      <button className='btn' onClick={() => setCount(count + 1)}>Click</button>
+      <button className='btn' onClick={handleIncreaseNumber}>Increase</button>
+      <span>{ count }</span>
+      <button className='btn' onClick={handleDecreaseNumber}>Decrease</button>
     </div>
   )
 }

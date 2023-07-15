@@ -6,10 +6,12 @@ function App() {
 
   const [count, setCount] = useState(0)
 
+  const handleIncreaseNumber = () => setCount(count + 1)
+  const handleDecreaseNumber = () => setCount(count - 1)
+
   return (
     <div className="App">
-      <Button count={count} setCount={setCount}></Button>
-      <span>{ count }</span>
+      <Button handleIncreaseNumber={handleIncreaseNumber} handleDecreaseNumber={handleDecreaseNumber} count={count} />
     </div>
   );
 }
