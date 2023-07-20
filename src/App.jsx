@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Button from './components/Button';
+import DataList from './components/DataList';
 
 function App() {
 
-  const [count, setCount] = useState(0)
-
-  const handleIncreaseNumber = () => setCount(count + 1)
-  const handleDecreaseNumber = () => setCount(count - 1)
 
   return (
     <div className="App">
-      <Button handleIncreaseNumber={handleIncreaseNumber} handleDecreaseNumber={handleDecreaseNumber} count={count} />
+      <DataList />
     </div>
   );
 }
