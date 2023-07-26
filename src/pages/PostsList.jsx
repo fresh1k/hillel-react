@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import {Table} from 'antd'
 import axios from 'axios'
 
@@ -6,6 +7,8 @@ const DataList = () => {
 
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+
+  const navigate = useNavigate();
 
   const columns = [
     {
@@ -48,13 +51,16 @@ const DataList = () => {
   return (
     <div>
       <Table
+        style={{
+          cursor: 'pointer',
+        }}
         rowKey='id'
         dataSource={data}
         columns={columns}
         loading={loading}
         onRow={(record) => {
           return {
-            onClick: () => alert(record.title)
+            onClick: () => navigate(`/posts/${record.id}`)
           }
         }}
       />;
